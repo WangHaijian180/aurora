@@ -2,17 +2,24 @@
   <div class="home">
     <img alt="Vue logo" src="../../static/img/logos.jpg">
     <HelloWorld msg="aurora" />
+    <music></music>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
-
+import music from '@/components/Music.vue'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HelloWorld,
+    music
+  },
+  data () {
+    return {
+
+    }
   }
 }
 </script>
