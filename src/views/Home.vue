@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="/static/img/logoy.jpg">
+    <img alt="Vue logo" src="../../static/img/logos.jpg">
     <HelloWorld msg="aurora" />
   </div>
 </template>
