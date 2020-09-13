@@ -5,9 +5,19 @@
       <router-link to="/about">About</router-link> |
       <a href="https://notes.wanghaijian.cn">笔记</a>
     </div>
+    <music></music>
     <router-view />
   </div>
 </template>
+
+<script>
+import music from '@/components/Music.vue'
+export default {
+  components:{
+    music
+  }
+}
+</script>
 
 <style lang="less">
 #app {
