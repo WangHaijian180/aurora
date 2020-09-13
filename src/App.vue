@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <a href="https://notes.wanghaijian.cn">笔记</a>
+      <a href="https://notes.wanghaijian.cn" target="_blank">笔记</a>
     </div>
     <music></music>
     <router-view />
@@ -20,6 +20,10 @@ export default {
 </script>
 
 <style lang="less">
+*{
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -30,7 +34,10 @@ export default {
 
 #nav {
   padding: 30px;
-
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  right: 0;
   a {
     font-weight: bold;
     color: #2c3e50;
