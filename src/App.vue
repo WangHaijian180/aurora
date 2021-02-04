@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">whj</router-link> |
       <router-link to="/about">About</router-link> |
       <a href="https://notes.wanghaijian.cn" target="_blank">笔记</a>
     </div>
