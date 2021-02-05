@@ -13,15 +13,15 @@ Vue.use(gsap);
 Vue.config.productionTip = false
 
 // 判断是否登陆
-router.beforeEach((to,from,next) => {
-      console.log(from);
-    if(to.meta == true){
-      next({ path: '/' })
-      console.log('检查页面是否需要登陆')
-      // 检查页面是否需要登陆
-    }
+// router.beforeEach((to,from,next) => {
+//       console.log(from);
+//     if(to.meta == true){
+//       next({ path: '/' })
+//       console.log('检查页面是否需要登陆')
+//       // 检查页面是否需要登陆
+//     }
    
-})
+// })
 
 
 
