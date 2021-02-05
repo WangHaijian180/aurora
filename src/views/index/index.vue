@@ -5,6 +5,8 @@
 
 <script>
 export default {
+  components:{
+  },
   name: 'index',
   data () {
     return {
