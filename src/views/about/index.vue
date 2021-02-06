@@ -14,7 +14,7 @@ export default {
     }
   },
   mounted () {
-    this.back();
+    // this.back();
   },
   methods: {
 
