@@ -15,11 +15,6 @@ const routes = [
     name: 'About',
     meta:true,
     component: () => import('@/views/about')
-  },
-  {
-    path: '/login',
-    name: 'login',
-    component: () => import('@/views/login')
   }
 ]
 // history
