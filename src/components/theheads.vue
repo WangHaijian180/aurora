@@ -2,10 +2,10 @@
   <div class="theheads">
     <el-row :gutter="10">
       <el-col :xs="10"
-        ><div class="grid-content bg-purple hidden-xs-only">
+        ><div class="grid-content bg-purple hidden-sm-and-down">
           <nav class="navtab">
             <el-menu
-              :default-active="activeIndex2"
+              :default-active="activeIndex"
               class="el-menu-demo"
               mode="horizontal"
               @select="handleSelect"
@@ -32,8 +32,8 @@
         </div></el-col
       >
       <el-col :lg="10"
-        ><div class="grid-content bg-purple-light hidden-md-and-up">
-          <div class="grid-content display_jc_sb">
+        ><div class="grid-content bg-purple-light  hidden-sm-and-up">
+          <div class="grid-content display_jc_sb hidden-sm-and-up">
             <div class="right">
               <img src="/assets/logo.png" alt="" srcset="" />
             </div>
@@ -95,6 +95,7 @@ export default {
   data() {
     return {
       isCollapse: false,
+       activeIndex: '1',
     };
   },
   methods: {
@@ -103,6 +104,9 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    handleSelect(key, keyPath){
+        console.log(key, keyPath);
     },
     iscollapspcklck() {
       if (this.isCollapse) {
