@@ -1,12 +1,14 @@
 <template>
   <div class="index">
-      
+      <theheads></theheads>
   </div>
 </template>
 
 <script>
+import theheads from "../../components/theheads";
 export default {
   components:{
+    theheads
   },
   name: 'index',
   data () {
@@ -27,6 +29,9 @@ export default {
   }
 }
 </script>
-<style scoped>
-
+<style lang="less" scoped>
+  .index{
+    width: 100%;
+    height: 100%;
+  }
 </style>

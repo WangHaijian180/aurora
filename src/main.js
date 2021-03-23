@@ -7,6 +7,10 @@ Vue.use(gsap);
 // ui框架
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import 'element-ui/lib/theme-chalk/display.css';
+import 'element-ui/lib/theme-chalk/base.css';
+import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
+Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.use(ElementUI);
 // 请求
 import axios from 'axios'
