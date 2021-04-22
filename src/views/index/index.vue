@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-      <theheads></theheads>
       
   </div>
 </template>
