@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import theheads from "../../components/theheads";
+// import theheads from "../../components/theheads";
 export default {
   components:{
-    theheads
+    // theheads
   },
   name: 'index',
   data () {
