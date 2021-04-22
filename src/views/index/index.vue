@@ -2,8 +2,99 @@
   <div class="index">
     <!-- 高度vh -->
     <carousels :height="60" :imglist="imglist"></carousels>
-    <div class="main">
-
+    <div class="main max_width_1200">
+        <div class="list">
+            <div class="item">
+              <div class="left">
+                <img src="@/assets/13099.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13720.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13099.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13720.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13099.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13720.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13099.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13720.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13099.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+             <div class="item">
+              <div class="left">
+                <img src="@/assets/13720.jpg" alt="" srcset="">
+              </div>
+              <div class="right">
+                <p>暗恋是一种礼貌 暗地里盖一座城堡。</p>
+                 <p>我从未拥有过你一秒钟，心里却失去过你千万次。。</p>
+              </div>
+            </div>
+        </div>
     </div>
     <footers></footers>
   </div>
@@ -38,5 +129,31 @@ export default {
 .index {
   width: 100%;
   height: 100%;
+}
+.main{
+  padding: 10px 0;
+  .list{
+    width: 100%;
+    .item{
+      height: 200px;
+      display: flex;
+      .left{
+        height: 100%;
+        width: 200px;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .right{
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+    .item:nth-child(even){
+      flex-flow: row-reverse;
+    }
+  }
 }
 </style>
