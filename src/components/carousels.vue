@@ -5,12 +5,12 @@
         <img :src="item.img" alt="" srcset="" />
         <div class="carousel_title">
           <div class="title_text">
-            <transition name="el-zoom-in-center">
-              <h1 v-if="indexs == index">关于我们</h1>
-            </transition>
-            <transition name="el-zoom-in-bottom">
-              <span v-if="indexs == index" class="el-zoom-in-bottom">455465</span>
-            </transition>
+            <h1 class="wow animate__animated animate__backInUp">关于我们</h1>
+            <span
+              style="display: block"
+              class="animate__animated animate__backInUp"
+              >455465</span
+            >
           </div>
         </div>
       </el-carousel-item>
@@ -20,22 +20,38 @@
 <script>
 export default {
   props: ["height", "imglist"],
+ 
   data() {
-    return {
-      indexs:''
-    };
+    return {};
   },
   mounted() {
-    this.lodata();
+    // console.log(
+    //   new this.$wow.WOW({
+    //     boxClass: "wow", //需要执行动画元素的Class
+    //     animateClass: "animated", //animation.css动画的Class
+    //     offset: 0, //距离可视区域多少开始执行动画
+    //     mobile: true, //是否在移动设备执行动画
+    //     live: false, //异步加载的内容是否有效
+    //   }).init()
+    // );
+    // var wow = new WOW();
+    // wow.init();
+    // this.$nextTick(() => {
+    //   new this.$wow.WOW({
+    //     boxClass: "wow",
+    //     animateClass: "animated",
+    //     live: false,
+    //   }).init();
+    // });
   },
+
   methods: {
     lodata() {
       console.log(this.imglist);
     },
-    change(e){
-        console.log(e)
-        this.indexs = e
-    }
+    change(e) {
+      console.log(e);
+    },
   },
 };
 </script>

@@ -13,10 +13,11 @@
             @select="handleSelect"
             background-color="rgba(61, 61, 65,0)"
             :text-color="color"
+            :router="true"
             active-text-color="#fef3c9"
           >
-            <el-menu-item index="1">首页</el-menu-item>
-            <el-menu-item index="2">处理中心</el-menu-item>
+            <el-menu-item index="/">首页</el-menu-item>
+            <el-menu-item index="/about">处理中心</el-menu-item>
             <el-menu-item index="3">关于我们</el-menu-item>
           </el-menu>
         </div>
@@ -62,8 +63,9 @@ export default {
     };
   },
   methods: {
-    handleSelect(key) {
+    handleSelect(key,keyPath) {
       this.activeIndex = key;
+      console.log(keyPath)
     },
     menushow(){
       this.$emit("showheader",this.show)
