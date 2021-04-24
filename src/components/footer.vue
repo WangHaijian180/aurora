@@ -9,7 +9,7 @@
           </li>
         </ul>
         <div class="qecode">
-            <img src="@/assets/diugai.com161907264044021.png" alt="">
+            <img src="@/../static/img/diugai.com161907264044021.png" alt="">
             <p>扫描二维码</p>
         </div>
       </div>

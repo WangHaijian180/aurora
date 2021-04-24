@@ -1,6 +1,10 @@
 <template>
   <div class="carousels">
-    <el-carousel @change="change" :height="height + 'vh'" :autoplay="false">
+    <!-- <el-carousel
+      @change="change"
+      :height="height + 'vh'"
+      :autoplay="false"
+    >
       <el-carousel-item v-for="(item, index) in imglist" :key="index">
         <img :src="item.img" alt="" srcset="" />
         <div class="carousel_title">
@@ -14,13 +18,19 @@
           </div>
         </div>
       </el-carousel-item>
+    </el-carousel> -->
+
+    <el-carousel :interval="6000"  :autoplay="false"  :height="height + 'vh'">
+      <el-carousel-item v-for="(item, index) in imglist" :key="index">
+        <img :src="item.img" alt="" srcset="" />
+      </el-carousel-item>
     </el-carousel>
   </div>
 </template>
 <script>
 export default {
   props: ["height", "imglist"],
- 
+
   data() {
     return {};
   },

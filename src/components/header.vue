@@ -1,5 +1,5 @@
 <template>
-  <header class="headers" :style="background">
+  <header class="headers">
     <div class="max_width_1200">
       <div class="header_pc hidden-xs-only">
         <div class="logo">
@@ -11,14 +11,31 @@
             class="el-menu-demo"
             mode="horizontal"
             @select="handleSelect"
-            background-color="rgba(61, 61, 65,0)"
-            :text-color="color"
-            :router="true"
-            active-text-color="#fef3c9"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#1da335"
           >
-            <el-menu-item index="/">首页</el-menu-item>
-            <el-menu-item index="/about">处理中心</el-menu-item>
-            <el-menu-item index="3">关于我们</el-menu-item>
+            <template v-for="(item, iex) in data">
+              <el-menu-item
+                v-if="!item.list"
+                :key="iex"
+                :index="iex.toString()"
+                >{{ item.text }}</el-menu-item
+              >
+              <el-submenu
+                v-else-if="item.list"
+                :key="iex"
+                :index="iex.toString()"
+              >
+                <template slot="title">{{ item.text }}</template>
+                <el-menu-item
+                  v-for="(n, inde) in item.list"
+                  :key="inde"
+                  :index="iex.toString() + '-' + inde.toString()"
+                  >{{ n.text }}</el-menu-item
+                >
+              </el-submenu>
+            </template>
           </el-menu>
         </div>
       </div>
@@ -26,7 +43,7 @@
         <div class="cover"></div>
         <div class="header_phones">
           <div class="logo">
-            <img src="@/assets/161907596999064s.png" alt="" srcset="" />
+            <img src="@/../static/img/161907596999064s.png" alt="" srcset="" />
           </div>
           <div class="menu" @click="menushow">
             <img :src="righticon" alt="" />
@@ -36,17 +53,33 @@
           <el-menu
             default-active="2"
             class="el-menu-vertical-demo"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#1da335"
             @open="handleOpen"
             @close="handleClose"
           >
-            <el-menu-item index="1">
-              <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
-            </el-menu-item>
-            <el-menu-item index="2">
-              <i class="el-icon-setting"></i>
-              <span slot="title">导航四</span>
-            </el-menu-item>
+            <template v-for="(item, iex) in data">
+              <el-menu-item
+                v-if="!item.list"
+                :key="iex"
+                :index="iex.toString()"
+                >{{ iex }}</el-menu-item
+              >
+              <el-submenu
+                v-else-if="item.list"
+                :key="iex"
+                :index="iex.toString()"
+              >
+                <template slot="title">{{ iex }}</template>
+                <el-menu-item
+                  v-for="(n, inde) in item.list"
+                  :key="inde"
+                  :index="iex.toString() + '-' + inde.toString()"
+                  >{{ iex }}-{{ inde }}</el-menu-item
+                >
+              </el-submenu>
+            </template>
           </el-menu>
         </div>
       </div>
@@ -56,35 +89,31 @@
 <script>
 export default {
   name: "headers",
-  props: ["background", "color", "logoimg", "righticon","show"],
+  props: ["background", "color", "logoimg", "righticon", "show"],
   data() {
     return {
-      activeIndex: "0"
+      activeIndex: "0",
+      data: [
+        { text: "首页" },
+        { text: "Vue" },
+        { text: "小程序" },
+        { text: "前端其他", list: [{ text: "css" }, { text: "html" }] },
+        { text: "java" },
+        { text: "数据库" },
+        { text: "其他" },
+      ],
     };
   },
   methods: {
-    handleSelect(key,keyPath) {
+    handleSelect(key, keyPath) {
       this.activeIndex = key;
-      console.log(keyPath)
+      console.log(keyPath);
     },
-    menushow(){
-      this.$emit("showheader",this.show)
-      // if(this.show){
-      //   this.show = false
-      //   this.background = 'background:rgba(61, 61, 65,0.4)'
-      //   this.righticon = require("@/assets/righticon.png")
-      // }else{
-      //   this.show = true
-      //   this.background = 'background:rgba(255,255,255)'
-      //   this.righticon = require("@/assets/righticons.png")
-      // }
+    menushow() {
+      this.$emit("showheader", this.show);
     },
-    handleOpen(){
-
-    },
-    handleClose(){
-
-    }
+    handleOpen() {},
+    handleClose() {},
   },
 };
 </script>
@@ -93,7 +122,7 @@ export default {
 .headers {
   width: 100%;
   position: fixed;
-  // background-color: rgba(61, 61, 65,0.4);
+  background-color: #545c64;
   color: #fff !important;
   z-index: 999;
   .header_pc {
