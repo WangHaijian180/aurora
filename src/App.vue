@@ -8,7 +8,7 @@
       :logoimg="logoimg"
       @showheader="showheader"
     ></app-header>
-    <router-view :key="$route.fullPath"/>
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
@@ -36,13 +36,13 @@ export default {
   //   $route: function (newVal, oldVal) {
   //     console.log(newVal.query.type)
   //     console.log(oldVal)
-      
+
   //   },
   // },
   mounted() {
     // 监听页面滚动
     // window.addEventListener("scroll", this.handleScroll, true);
-  //  let loading =  this.$loading()
+    //  let loading =  this.$loading()
     // let loadingInstance = Loading.service();
     this.$nextTick(() => {
       // setTimeout(()=>{
