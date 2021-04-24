@@ -107,7 +107,13 @@ export default {
   methods: {
     handleSelect(key, keyPath) {
       this.activeIndex = key;
-      console.log(keyPath);
+      let path = '';
+      if(keyPath.length == 1){
+        path = this.data[keyPath[0]].text
+      }else{
+        path = this.data[keyPath[0]].list[keyPath[1].substring(keyPath[1].lastIndexOf("-")+1)].text
+      }
+      this.$router.push({path:'/index',query:{type:path}});
     },
     menushow() {
       this.$emit("showheader", this.show);
