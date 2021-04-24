@@ -13,7 +13,6 @@ import 'element-ui/lib/theme-chalk/base.css';
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
 Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.use(ElementUI);
-
 // 动画
 import animate from 'animate.css'
 Vue.use(animate);

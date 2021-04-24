@@ -8,7 +8,7 @@
       :logoimg="logoimg"
       @showheader="showheader"
     ></app-header>
-    <router-view />
+    <router-view :key="$route.fullPath"/>
   </div>
 </template>
 
@@ -32,10 +32,22 @@ export default {
       show: false,
     };
   },
+  // watch: {
+  //   $route: function (newVal, oldVal) {
+  //     console.log(newVal.query.type)
+  //     console.log(oldVal)
+      
+  //   },
+  // },
   mounted() {
     // 监听页面滚动
     // window.addEventListener("scroll", this.handleScroll, true);
+  //  let loading =  this.$loading()
+    // let loadingInstance = Loading.service();
     this.$nextTick(() => {
+      // setTimeout(()=>{
+      //   // loading.close();
+      // },3000)
       new this.$wow.WOW({
         boxClass: "wow",
         animateClass: "animate__animated",
@@ -44,18 +56,6 @@ export default {
     });
   },
   methods: {
-    // 滚动导航头部背景改变
-    // handleScroll(e) {
-    //   if (e.target.documentElement.scrollTop > 10) {
-    //     this.background = "background:rgba(255,255,255,0.9)";
-    //     this.color = "#000";
-    //     this.righticon = require("@/../static/img/righticons.png");
-    //   } else {
-    //     this.background = "background:rgba(61, 61, 65,0.4)";
-    //     this.color = "#fff";
-    //     this.righticon = require("@/../static/img/righticon.png");
-    //   }
-    // },
     showheader(e) {
       console.log(e);
       if (e) {

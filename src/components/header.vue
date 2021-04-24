@@ -51,7 +51,7 @@
         </div>
         <div v-show="show">
           <el-menu
-            default-active="2"
+            :default-active="activeIndex"
             class="el-menu-vertical-demo"
             background-color="#545c64"
             text-color="#fff"
@@ -59,24 +59,24 @@
             @open="handleOpen"
             @close="handleClose"
           >
-            <template v-for="(item, iex) in data">
+             <template v-for="(item, iex) in data">
               <el-menu-item
                 v-if="!item.list"
                 :key="iex"
                 :index="iex.toString()"
-                >{{ iex }}</el-menu-item
+                >{{ item.text }}</el-menu-item
               >
               <el-submenu
                 v-else-if="item.list"
                 :key="iex"
                 :index="iex.toString()"
               >
-                <template slot="title">{{ iex }}</template>
+                <template slot="title">{{ item.text }}</template>
                 <el-menu-item
                   v-for="(n, inde) in item.list"
                   :key="inde"
                   :index="iex.toString() + '-' + inde.toString()"
-                  >{{ iex }}-{{ inde }}</el-menu-item
+                  >{{ n.text }}</el-menu-item
                 >
               </el-submenu>
             </template>
@@ -87,6 +87,7 @@
   </header>
 </template>
 <script>
+
 export default {
   name: "headers",
   props: ["background", "color", "logoimg", "righticon", "show"],
@@ -113,7 +114,11 @@ export default {
       }else{
         path = this.data[keyPath[0]].list[keyPath[1].substring(keyPath[1].lastIndexOf("-")+1)].text
       }
-      this.$router.push({path:'/index',query:{type:path}});
+      if(path == '首页'){
+        this.$router.push({path:'/'});
+      }else{
+        this.$router.push({path:'/index',query:{type:path}});
+      }
     },
     menushow() {
       this.$emit("showheader", this.show);
@@ -127,7 +132,7 @@ export default {
 <style lang="less" scoped>
 .headers {
   width: 100%;
-  position: fixed;
+  // position: fixed;
   background-color: #545c64;
   color: #fff !important;
   z-index: 999;

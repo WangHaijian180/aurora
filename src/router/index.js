@@ -17,6 +17,11 @@ const routes = [
     component: () => import('@/views/about')
   }
 ]
+// 重复触发了同一个路由报错
+const original = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return original.call(this,location).catch( err=> err)
+}
 // history
 const router = new VueRouter({
   mode: 'history',
