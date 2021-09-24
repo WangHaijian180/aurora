@@ -18,6 +18,11 @@ import animate from 'animate.css'
 Vue.use(animate);
 import wow from 'wowjs'
 Vue.prototype.$wow = wow
+
+// markdown
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+Vue.use(mavonEditor)
 // 请求
 import axios from 'axios'
 import VueAxios from 'vue-axios'

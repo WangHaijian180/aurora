@@ -107,6 +107,7 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
+      console.log(key,keyPath)
       this.activeIndex = key;
       let path = '';
       if(keyPath.length == 1){
@@ -117,7 +118,7 @@ export default {
       if(path == '首页'){
         this.$router.push({path:'/'});
       }else{
-        this.$router.push({path:'/index',query:{type:path}});
+        this.$router.push({path:'/about',query:{type:path}});
       }
     },
     menushow() {
@@ -143,14 +144,8 @@ export default {
     .el-menu-demo {
       border: 0 !important;
     }
-    // .el-menu--horizontal{
-    //     background-color: rgba(61, 61, 65,0.4);
-    // }
     .logo {
       height: 60px;
-      //   width: 180px;
-      //   background-image: url('../assets/diugai.com161907286619186.png');
-      //   background-size: 100% 100%;
       img {
         object-fit: cover;
         height: 100%;

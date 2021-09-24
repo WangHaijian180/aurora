@@ -27,8 +27,9 @@ export default {
       color: "#fff",
       // 导航logo
       logoimg: require("@/../static/img/161907596999064.png"),
-
+ 
       righticon: require("@/../static/img/righticon.png"),
+      
       show: false,
     };
   },
@@ -42,7 +43,7 @@ export default {
   mounted() {
     // 监听页面滚动
     // window.addEventListener("scroll", this.handleScroll, true);
-    //  let loading =  this.$loading()
+    // let loading =  this.$loading()
     // let loadingInstance = Loading.service();
     this.$nextTick(() => {
       // setTimeout(()=>{

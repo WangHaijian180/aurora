@@ -1,33 +1,18 @@
 <template>
   <div class="index">
-    <!-- 高度vh -->
-    <!-- <carousels :height="60" :imglist="imglist"></carousels> -->
-    <div class="main max_width_1200">
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="'/index?type='+type">{{type}}</el-breadcrumb-item>
-          <el-breadcrumb-item>{{type}}</el-breadcrumb-item>
-        </el-breadcrumb>
-        <maindefault :type="type"></maindefault>
-    </div>
+      <carousels></carousels>
   </div>
 </template>
 
 <script>
-// import carousels from "@/components/carousels";
-import maindefault from '@/components/main_default'
+import carousels from '@/components/carousels'
 export default {
   components: {
-    // carousels,
-    maindefault
+    carousels
   },
   name: "index",
   data() {
     return {
-      // imglist: [
-      //   { img: require("@/../static/img/13720.jpg") },
-      //   { img: require("@/../static/img/13099.jpg") },
-      //   { img: require("@/../static/img/15156.jpg") },
-      // ],
       type:''
     };
   },
